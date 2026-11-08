@@ -1,0 +1,11 @@
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+*.xdv
+*.synctex.gz
+.DS_Store
+build/

@@ -1,0 +1,139 @@
+\documentclass[11pt,aspectratio=43]{beamer}
+
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx,booktabs,array,tabularx,tikz,etoolbox}
+\usetikzlibrary{shapes.geometric}
+
+\IfFontExistsTF{Times New Roman}
+  {\setmainfont{Times New Roman}}
+  {\setmainfont{TeX Gyre Termes}}
+\IfFontExistsTF{TeX Gyre Heros}
+  {\setsansfont{TeX Gyre Heros}}
+  {\setsansfont{Helvetica}}
+\IfFontExistsTF{Songti SC}
+  {\setCJKmainfont{Songti SC}}
+  {\IfFontExistsTF{Noto Serif CJK SC}
+    {\setCJKmainfont{Noto Serif CJK SC}}
+    {\setCJKmainfont{FandolSong-Regular}}}
+\IfFontExistsTF{Hiragino Sans GB}
+  {\setCJKsansfont{Hiragino Sans GB}}
+  {\IfFontExistsTF{Noto Sans CJK SC}
+    {\setCJKsansfont{Noto Sans CJK SC}}
+    {\setCJKsansfont{FandolHei-Regular}}}
+
+\usefonttheme{professionalfonts}
+\usetheme{default}
+\useoutertheme[subsection=false]{miniframes}
+\useinnertheme{circles}
+\renewcommand{\familydefault}{\rmdefault}
+\renewcommand{\CJKfamilydefault}{\CJKrmdefault}
+
+\definecolor{evidencered}{HTML}{C00000}
+\tikzset{evidencecircle/.style={draw=evidencered,line width=.7pt}}
+
+\setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{structure}{fg=black}
+\setbeamercolor{title}{fg=black,bg=white}
+\setbeamercolor{frametitle}{fg=black,bg=white}
+\setbeamercolor{section in head/foot}{fg=black,bg=white}
+\setbeamercolor{mini frame}{fg=black,bg=white}
+\setbeamercolor{palette primary}{fg=black,bg=white}
+\setbeamercolor{palette secondary}{fg=black,bg=white}
+\setbeamercolor{palette tertiary}{fg=black,bg=white}
+\setbeamercolor{palette quaternary}{fg=black,bg=white}
+\setbeamertemplate{section in head/foot shaded}[default][40]
+\setbeamertemplate{mini frames}[default]
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\setbeamersize{text margin left=10mm,text margin right=10mm}
+
+\setbeamerfont{frametitle}{family=\sffamily,size=\fontsize{14.4}{17}\selectfont,series=\mdseries}
+\setbeamerfont{title}{family=\sffamily,size=\fontsize{17.28}{22}\selectfont,series=\mdseries}
+\setbeamerfont{section in head/foot}{family=\sffamily,size=\fontsize{6}{7}\selectfont}
+\setbeamerfont{itemize/enumerate body}{size=\fontsize{10}{14}\selectfont}
+\setbeamerfont{itemize/enumerate subbody}{size=\fontsize{9}{12}\selectfont}
+\setbeamertemplate{headline}{%
+  \begin{beamercolorbox}{section in head/foot}
+    \vskip1pt\insertnavigation{\paperwidth}\vskip2pt
+  \end{beamercolorbox}}
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip\vskip3mm
+  \makebox[\textwidth][l]{\hspace*{-7mm}\begin{minipage}{122mm}
+    \usebeamerfont{frametitle}\insertframetitle
+  \end{minipage}}\vskip4mm}
+
+\hypersetup{pdftitle={},pdfauthor={},pdfsubject={},
+  colorlinks=true,linkcolor=black,urlcolor=black}
+\setlength{\parskip}{2mm}
+\graphicspath{{assets/}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\newcommand{\deckcover}[4]{%
+  \begin{frame}[plain,t]
+    \vspace{14mm}\centering
+    {\usebeamerfont{title}#1\par}
+    \ifstrempty{#2}{}{\vspace{5mm}{\large #2\par}}
+    \vspace{15mm}
+    \ifstrempty{#3}{}{{\small #3\par}}
+    \ifstrempty{#4}{}{{\small #4\par}}
+  \end{frame}}
+
+\newcommand{\chapterpage}[3][]{%
+  \section{#3}
+  \begin{frame}[plain,t]
+    \vspace{19mm}
+    {\large\color{black!55}#2\par}
+    \vspace{5mm}
+    {\sffamily\LARGE #3\par}
+    \ifstrempty{#1}{}{\vspace{7mm}#1\par}
+  \end{frame}}
+
+\newcommand{\subtitleline}[1]{%
+  {\fontsize{8.5}{12}\selectfont\color{black!65}#1\par}\vspace{5mm}}
+\newcommand{\smallbody}{\fontsize{10}{13}\selectfont}
+\newcommand{\highlightvalue}[1]{%
+  \tikz[baseline=(label.base)]\node[evidencecircle,ellipse,
+    inner xsep=3pt,inner ysep=2pt](label){#1};}
+
+\newcommand{\slideimage}[2][\textwidth]{%
+  \begin{center}
+    \includegraphics[width=#1,height=57mm,keepaspectratio]{#2}
+  \end{center}}
+\newcommand{\annotatedimage}[3]{%
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0](picture)at(0,0)
+      {\includegraphics[width=#2]{#1}};
+    \begin{scope}[x={(picture.south east)},y={(picture.north west)}]
+      #3
+    \end{scope}
+  \end{tikzpicture}}
+\newcommand{\evidenceellipse}[4]{%
+  \draw[evidencecircle](#1,#2)ellipse[x radius=#3,y radius=#4];}
+
+\newcommand{\videopage}[2]{%
+  \begin{frame}[t]{#1}
+    \vspace{19mm}\begin{center}{\sffamily\LARGE #2\par}\end{center}
+  \end{frame}}
+\newcommand{\contactpage}[3]{%
+  \begin{frame}[t]{#1}
+    \vspace{5mm}
+    \begin{columns}[T,onlytextwidth]
+      \begin{column}{.55\textwidth}#2\end{column}
+      \begin{column}{.38\textwidth}
+        \centering
+        \ifstrempty{#3}{}{\includegraphics[width=\linewidth,height=48mm,keepaspectratio]{#3}}
+      \end{column}
+    \end{columns}
+  \end{frame}}
+
+\begin{document}
+
+\deckcover{}{}{}{}
+
+\chapterpage{01}{}
+\begin{frame}[t]{}
+\end{frame}
+
+\end{document}

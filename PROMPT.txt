@@ -1,0 +1,60 @@
+Create this presentation using Herbert's default presentation style below.
+When template.tex is provided, use it as the style base. Preserve its fonts, font sizes, margins, title positions, chapter navigation, and thin red annotation settings while adding the content for this task.
+
+TASK
+Topic: [Fill in]
+Audience: [Fill in]
+Presentation duration: [Fill in]
+Slide count: [Specify a requirement, or let the content and duration determine it]
+Required coverage: [Fill in]
+Source materials and images: [List or attach files]
+Other requirements: [Leave blank if none]
+
+1. FORMAT
+Use LaTeX Beamer with a simple, formal academic presentation style.
+Use a 4:3 aspect ratio by default. Deliver a presentation-ready PDF and editable LaTeX source.
+Explicit requirements for this task take priority over these defaults.
+
+2. VISUAL STYLE
+Use a white background and black text. Reserve gray for chapter numbers and secondary information.
+Use Songti for Chinese body text, a Heiti-style sans-serif font for Chinese headings, and Times New Roman for English body text. Follow the template's font fallback order when a preferred font is unavailable.
+Leave generous whitespace and arrange text and images directly on the slide. Keep the footer clear of extra navigation icons and decoration.
+Use thin red circles or ellipses to highlight key text, numbers, buttons, or locations in screenshots. Keep the overall presentation black and white.
+Preserve the font sizes and spacing defined in the template.
+
+3. COVERS, CHAPTERS, AND NAVIGATION
+Keep the cover simple. Add the institution, presenter, or group members when needed.
+Separate chapters with dedicated divider slides using a small gray number, such as 01, 02, or 03, and a larger chapter title.
+Keep the fonts, sizes, positions, and spacing consistent across chapter dividers.
+Give chapters names that identify their actual subject. Avoid vague one-word labels.
+Keep chapter names and small circle navigation at the top of content slides.
+Hide navigation on the cover and chapter dividers, following the blank template's default settings.
+
+4. CONTENT AND DETAIL
+Define the chapters before arranging the slides within each chapter.
+Explain the main points in detail and combine secondary material where appropriate. Choose the slide count to fit the content and available time.
+Keep the essential points on slides. Put longer explanations, transitions, and supplementary material in a separate slide-by-slide speaker script.
+Remove slides whose purpose is unclear or whose connection to the topic is weak.
+Use titles that state the slide's subject directly. Write natural wording suitable for an academic or classroom presentation.
+
+5. IMAGES AND EVIDENCE
+Prefer real materials: the user's own software interface, actual results, course materials, and original screenshots that support the claims.
+For software demonstrations, show where to act, which settings to use, and what result to expect. Mark the relevant locations with thin red circles.
+Use clear screenshots, crop unrelated areas, and keep the mouse pointer away from the key information.
+When using personal materials, remove school, term, or other personal information as appropriate for the intended audience.
+Base facts and numbers on supplied materials or verified sources. Do not invent unsupported content.
+
+6. EXPLANATIONS AND SOURCES
+Remove production notes, internal instructions, and unnecessary small print from the audience-facing presentation.
+Include software version information or audience labels on the cover only when needed for this task.
+Retain source materials for verification. Whether to include a visible sources slide depends on the task requirements.
+
+7. OPTIONAL ELEMENTS
+For practical demonstrations, include a video and a simple video-prompt slide when useful.
+When interaction is needed, add a questions or contact slide. A suitable layout places discussion topics on the left and a contact QR code on the right.
+Include videos, QR codes, group members, and interaction slides only when appropriate for the task.
+
+8. DELIVERY AND CHECKS
+Deliver the presentation-ready PDF, LaTeX source, and required images.
+When an oral presentation is needed, include a separate slide-by-slide speaker script. Package any demonstration files or videos that are required.
+Compile with XeLaTeX or a compatible Tectonic engine. Inspect the rendered pages and fix missing characters, overflow, overlapping elements, and layout problems before delivery.
